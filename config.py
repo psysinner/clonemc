@@ -1,127 +1,68 @@
 import re
 from os import getenv
-# ------------------------------------
-# ------------------------------------
 from dotenv import load_dotenv
 from pyrogram import filters
-# ------------------------------------
-# ------------------------------------
+
 load_dotenv()
-# ------------------------------------
-# -----------------------------------------------------
+
+# Basic API credentials
 API_ID = int(getenv("API_ID"))
 API_HASH = getenv("API_HASH")
-# ------------------------------------------------------
 BOT_TOKEN = getenv("BOT_TOKEN")
 BOT_ID = getenv("BOT_ID")
-# -------------------------------------------------------
-OWNER_USERNAME = getenv("OWNER_USERNAME","ZeoXpro")
-# --------------------------------------------------------
-BOT_USERNAME = getenv("BOT_USERNAME" , "AqiaBot")
-# --------------------------------------------------------
-BOT_NAME = getenv("BOT_NAME" , "Aqia")
-# ---------------------------------------------------------
-ASSUSERNAME = getenv("ASSUSERNAME" , "AqiaPro")
-# ---------------------------------------------------------
 
+# Bot identity
+OWNER_USERNAME = getenv("OWNER_USERNAME", "ZeoXpro")
+BOT_USERNAME = getenv("BOT_USERNAME", "AqiaBot")
+BOT_NAME = getenv("BOT_NAME", "Aqia")
+ASSUSERNAME = getenv("ASSUSERNAME", "AqiaPro")
 
-#---------------------------------------------------------------
-#---------------------------------------------------------------
+# External services
 MONGO_DB_URI = getenv("MONGO_DB_URI")
 API_KEY = getenv("API_KEY")
-#---------------------------------------------------------------
-#---------------------------------------------------------------
+API_URL = getenv("API_URL")
 
-# ----------------------------------------------------------------
+# Limits and logging
 DURATION_LIMIT_MIN = int(getenv("DURATION_LIMIT", 17000))
-# ----------------------------------------------------------------
-
-# ----------------------------------------------------------------
 LOGGER_ID = int(getenv("LOGGER_ID"))
 CLONE_LOGGER = LOGGER_ID
-# ----------------------------------------------------------------
-# ----------------------------------------------------------------
 OWNER_ID = int(getenv("OWNER_ID", 7355202884))
-# -----------------------------------------------------------------
-# -----------------------------------------------------------------
-# config.py
-# ----------------------------------------------------------------
-# ----------------------------------------------------------------
-# ----------------------------------------------------------------
+
+# Deployment
 HEROKU_APP_NAME = getenv("HEROKU_APP_NAME")
-# ----------------------------------------------------------------
 HEROKU_API_KEY = getenv("HEROKU_API_KEY")
-# ----------------------------------------------------------------
-# ----------------------------------------------------------------
-# ----------------------------------------------------------------
+
+# Git repo
 SOURCE = getenv("SOURCE", "https://github.com/TeamProBots/Clonify")
-UPSTREAM_REPO = getenv(
-    "UPSTREAM_REPO",
-    "https://github.com/psysinner/clonemc",
-)
+UPSTREAM_REPO = getenv("UPSTREAM_REPO", "https://github.com/psysinner/clonemc")
 UPSTREAM_BRANCH = getenv("UPSTREAM_BRANCH", "master")
-GIT_TOKEN = getenv(
-    "GIT_TOKEN", None
-)
-# --------------------------------------------------------------------
-# --------------------------------------------------------------------
-# --------------------------------------------------------------------
-# --------------------------------------------------------------------
+GIT_TOKEN = getenv("GIT_TOKEN", None)
 
-
-
-# ------------------------------------------------------------------------
-# -------------------------------------------------------------------------
+# Support links
 SUPPORT_CHANNEL = getenv("SUPPORT_CHANNEL", "https://t.me/ProBotts")
 SUPPORT_CHAT = getenv("SUPPORT_CHAT", "https://t.me/ProBotGc")
 CHAT = getenv("CHAT", "https://t.me/ProBotGc")
-# ------------------------------------------------------------------------------
-# -------------------------------------------------------------------------------
 
-
-
-
-
-
-
-# --------------------------------------------------------------------------------
-# --------------------------------------------------------------------------------
-# --------------------------------------------------------------------------------
-# --------------------------------------------------------------------------------
+# Assistant behavior
 AUTO_LEAVING_ASSISTANT = getenv("AUTO_LEAVING_ASSISTANT", "False")
 AUTO_LEAVE_ASSISTANT_TIME = int(getenv("ASSISTANT_LEAVE_TIME", "9000"))
 SONG_DOWNLOAD_DURATION = int(getenv("SONG_DOWNLOAD_DURATION", "9999999"))
 SONG_DOWNLOAD_DURATION_LIMIT = int(getenv("SONG_DOWNLOAD_DURATION_LIMIT", "9999999"))
-# --------------------------------------------------------------------------------
-# --------------------------------------------------------------------------------
-# --------------------------------------------------------------------------------
 
-# ---------------------------------------------------------------------------------
+# Spotify credentials
 SPOTIFY_CLIENT_ID = getenv("SPOTIFY_CLIENT_ID", "1c21247d714244ddbb09925dac565aed")
 SPOTIFY_CLIENT_SECRET = getenv("SPOTIFY_CLIENT_SECRET", "709e1a2969664491b58200860623ef19")
-# ----------------------------------------------------------------------------------
 
-
-
-
-# -----------------------------------------------------------------------------------
+# Playlist and file limits
 PLAYLIST_FETCH_LIMIT = int(getenv("PLAYLIST_FETCH_LIMIT", 25))
-# ------------------------------------------------------------------------------------
-
-# ------------------------------------------------------------------------------------
 TG_AUDIO_FILESIZE_LIMIT = int(getenv("TG_AUDIO_FILESIZE_LIMIT", "5242880000"))
 TG_VIDEO_FILESIZE_LIMIT = int(getenv("TG_VIDEO_FILESIZE_LIMIT", "5242880000"))
-# --------------------------------------------------------------------------------------
-# ---------------------------------------------------------------------------------------
 
-
-
-# ------------------------------------
-# ------------------------------------
-# ------------------------------------
-# ------------------------------------
+# Session strings
 STRING1 = getenv("STRING_SESSION", "")
 STRING2 = getenv("STRING_SESSION2", None)
+
+# Runtime variables
 BANNED_USERS = filters.user()
 adminlist = {}
 lyrical = {}
@@ -129,36 +70,15 @@ votemode = {}
 autoclean = []
 confirmer = {}
 
-# ------------------------------------
-# ------------------------------------
-# ------------------------------------
-# ------------------------------------
-
-# ------------------------------------------------------------------------
-# ------------------------------------------------------------------------
-# ------------------------------------------------------------------------
-# ------------------------------------------------------------------------
-# ------------------------------------------------------------------------
-# ------------------------------------------------------------------------
-# ------------------------------------------------------------------------
-
+# Image URLs
 STREAMI_PICS = [
-"https://i.ibb.co/whgkNq6n/start-img-1.jpg",
-"https://i.ibb.co/q32FdssH/start-img-2.jpg",
-
+    "https://i.ibb.co/whgkNq6n/start-img-1.jpg",
+    "https://i.ibb.co/q32FdssH/start-img-2.jpg",
 ]
 
-START_IMG_URL = getenv(
-    "START_IMG_URL", "https://i.ibb.co/xPjc7tv/help-menu.jpg"
-)
-
-HELP_IMG_URL = getenv(
-    "HELP_IMG_URL", "https://i.ibb.co/xPjc7tv/help-menu.jpg"
-)
-
-PING_IMG_URL = getenv(
-    "PING_IMG_URL", "https://i.ibb.co/VWnm6f3f/ping.jpg"
-)
+START_IMG_URL = getenv("START_IMG_URL", "https://i.ibb.co/xPjc7tv/help-menu.jpg")
+HELP_IMG_URL = getenv("HELP_IMG_URL", "https://i.ibb.co/xPjc7tv/help-menu.jpg")
+PING_IMG_URL = getenv("PING_IMG_URL", "https://i.ibb.co/VWnm6f3f/ping.jpg")
 PLAYLIST_IMG_URL = "https://i.ibb.co/gL3ykkyh/play-music.jpg"
 STATS_IMG_URL = "https://i.ibb.co/pBqPtFYn/statistics.jpg"
 TELEGRAM_AUDIO_URL = "https://i.ibb.co/gL3ykkyh/play-music.jpg"
@@ -170,41 +90,24 @@ SPOTIFY_ARTIST_IMG_URL = "https://i.ibb.co/XZfMS8Db/spotify.jpg"
 SPOTIFY_ALBUM_IMG_URL = "https://i.ibb.co/XZfMS8Db/spotify.jpg"
 SPOTIFY_PLAYLIST_IMG_URL = "https://i.ibb.co/XZfMS8Db/spotify.jpg"
 
-# ------------------------------------------------------------------------
-# ------------------------------------------------------------------------
-# ------------------------------------------------------------------------
-# ------------------------------------------------------------------------
+# Time conversion
 def time_to_seconds(time):
     stringt = str(time)
     return sum(int(x) * 60**i for i, x in enumerate(reversed(stringt.split(":"))))
 
-
 DURATION_LIMIT = int(time_to_seconds(f"{DURATION_LIMIT_MIN}:00"))
 
-# -----------------------------------------------------------------------------
-# -----------------------------------------------------------------------------
-# ------------------------------------------------------------------------------
+# URL validation
 if SUPPORT_CHANNEL:
     if not re.match("(?:http|https)://", SUPPORT_CHANNEL):
-        raise SystemExit(
-            "[ERROR] - Your SUPPORT_CHANNEL url is wrong. Please ensure that it starts with https://"
-        )
+        raise SystemExit("[ERROR] - Your SUPPORT_CHANNEL url is wrong. Please ensure that it starts with https://")
 
 if SUPPORT_CHAT:
     if not re.match("(?:http|https)://", SUPPORT_CHAT):
-        raise SystemExit(
-            "[ERROR] - Your SUPPORT_CHAT url is wrong. Please ensure that it starts with https://"
-        )
-# ---------------------------------------------------------------------------------------
-# ----------------------------------------------------------------------------------------
-# ----------------------------------------------------------------------------------------
+        raise SystemExit("[ERROR] - Your SUPPORT_CHAT url is wrong. Please ensure that it starts with https://")
 
-
+# Greeting emojis
 GREET = [
-    "💞", "🥂", "🔍", "🧪", "🥂", "⚡️", "🔥", "🦋", "🎩", "🌈", "🍷", "🥂", "🦋", "🥃", "🥤", "🕊️",
-    "🦋", "🦋", "🕊️", "⚡️", "🕊️", "⚡️", "⚡️", "🥂", "💌", "🥂", "🥂", "🧨"
+    "💞", "🥂", "🔍", "🧪", "🥂", "⚡️", "🔥", "🦋", "🎩", "🌈", "🍷", "🥂", "🦋", "🥃", "🥤", "🕊",
+    "🦋", "🦋", "🕊", "⚡️", "🕊", "⚡️", "⚡️", "🥂", "💌", "🥂", "🥂", "🧨"
 ]
-
-# ----------------------------------------------------------------------------------------
-# ----------------------------------------------------------------------------------------
-# ----------------------------------------------------------------------------------------
