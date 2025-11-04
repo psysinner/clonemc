@@ -21,6 +21,7 @@ ASSUSERNAME = getenv("ASSUSERNAME", "AqiaPro")
 MONGO_DB_URI = getenv("MONGO_DB_URI")
 API_KEY = getenv("API_KEY")
 API_URL = getenv("API_URL")
+VIDEO_API_URL = getenv("VIDEO_API_URL", 'https://api.video.thequickearn.xyz')
 
 # Limits and logging
 DURATION_LIMIT_MIN = int(getenv("DURATION_LIMIT", 17000))
